@@ -1,0 +1,328 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand palette — Industrial Premium */
+  --color-ink: #0b0d10; /* near-black charcoal */
+  --color-coal: #12161b; /* dark section surface */
+  --color-steel: #3e4c5e; /* steel blue-gray */
+  --color-gold: #c0912f; /* molten gold (brand accent) */
+  --color-golddark: #8a6417; /* AA-compliant on white/paper (5.36:1 / 5.0:1) */
+  --color-oxide: #8a2b1d; /* heated-steel oxide red (heat ramp) */
+  --color-hot: #f2c14e; /* white-hot yellow (heat ramp) */
+  --color-paper: #f7f7f5; /* off-white body */
+  --color-line: #e7e9ec; /* hairline borders */
+  --color-muted: #5c6672; /* secondary text */
+
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-ibm-mono), ui-monospace, monospace;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Brand text selection */
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* Gold focus rings for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Slim branded scrollbar (WebKit) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a313a;
+  border: 2px solid var(--color-ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Ghost display type: transparent fill, hairline stroke */
+.text-ghost {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(11, 13, 16, 0.16);
+}
+.text-ghost-light {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.22);
+}
+
+/* Film grain overlay (fixed, above everything, non-interactive) */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============ Steel fabrication theme ============ */
+
+/* Heat physics: metal heats up fast, cools down slow */
+.heat {
+  transition-property: color, background-color, border-color, box-shadow, transform;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-out;
+}
+.heat:hover {
+  transition-duration: 0.15s;
+}
+
+/* Technical annotation layer (engineering-document mono captions) */
+.anno {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Steel plate: brushed texture + four bolted corners */
+.plate,
+.plate-dark {
+  position: relative;
+}
+.plate {
+  --bolt: rgba(11, 13, 16, 0.2);
+  background-image: repeating-linear-gradient(
+    105deg,
+    rgba(11, 13, 16, 0.02) 0px,
+    rgba(11, 13, 16, 0.02) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+.plate-dark {
+  --bolt: rgba(255, 255, 255, 0.24);
+  background-image: repeating-linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+.plate::after,
+.plate-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 11px 11px, var(--bolt) 2.2px, transparent 3.2px),
+    radial-gradient(circle at calc(100% - 11px) 11px, var(--bolt) 2.2px, transparent 3.2px),
+    radial-gradient(circle at 11px calc(100% - 11px), var(--bolt) 2.2px, transparent 3.2px),
+    radial-gradient(
+      circle at calc(100% - 11px) calc(100% - 11px),
+      var(--bolt) 2.2px,
+      transparent 3.2px
+    );
+}
+
+/* Checker/tread plate pattern (workshop floor) */
+.treadplate {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36'%3E%3Cg fill='rgba(255,255,255,0.09)'%3E%3Crect x='4' y='13' width='15' height='5' rx='2.5' transform='rotate(-45 11.5 15.5)'/%3E%3Crect x='21' y='27' width='15' height='5' rx='2.5' transform='rotate(45 28.5 29.5)'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Die-stamped numerals (embossed into dark plate) */
+.stamped {
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.85), 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Plasma cut: glowing point travelling along a seam.
+   NOTE: callers must position this element themselves (relative/absolute) —
+   setting position here would override Tailwind position utilities. */
+.plasma-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(192, 145, 47, 0.4), transparent);
+}
+.plasma-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -12%;
+  height: 2px;
+  width: 80px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, transparent, rgba(242, 193, 78, 0.9), #fff);
+  animation: plasma 6s linear infinite;
+}
+.plasma-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -12%;
+  height: 5px;
+  width: 5px;
+  margin-left: 78px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  box-shadow: 0 0 8px 2px rgba(242, 193, 78, 0.95), 0 0 22px 8px rgba(192, 145, 47, 0.5);
+  animation: plasma 6s linear infinite;
+}
+@keyframes plasma {
+  from {
+    left: -12%;
+  }
+  to {
+    left: 112%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plasma-line::before,
+  .plasma-line::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Dimension line end ticks (CAD callouts) */
+.dim-line {
+  position: relative;
+  height: 1px;
+  background: rgba(192, 145, 47, 0.7);
+}
+.dim-line::before,
+.dim-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 9px;
+  width: 1px;
+  transform: translateY(-50%);
+  background: rgba(192, 145, 47, 0.7);
+}
+.dim-line::before {
+  left: 0;
+}
+.dim-line::after {
+  right: 0;
+}
+
+/* Animated gold underline for nav links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 100%;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after,
+.link-underline.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Display headings default tracking */
+.font-display {
+  letter-spacing: 0.01em;
+}
+
+/* Gold hazard stripe accent */
+.hazard {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-gold) 0,
+    var(--color-gold) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* Subtle blueprint grid for dark sections */
+.blueprint {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Client logo marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+.marquee-slow {
+  animation-duration: 60s;
+}
+.marquee-fast {
+  animation-duration: 26s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* WhatsApp float pulse */
+@keyframes waPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+.wa-pulse {
+  animation: waPulse 2.4s ease-out infinite;
+}
