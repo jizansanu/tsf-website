@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description:
       "ISO-certified structural steel fabrication and engineering in Dubai and Sharjah, UAE. Structural steel, custom fabrication, CNC machining and marine solutions since 1997.",
     url: "/",
-    images: [{ url: "/images/og.jpg", width: 1200, height: 630 }],
+    images: [{ url: site.ogImage, width: 1200, height: 630 }],
   },
 };
 

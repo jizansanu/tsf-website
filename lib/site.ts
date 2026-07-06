@@ -17,6 +17,10 @@ if (!rawBaseUrl && process.env.NODE_ENV === "production") {
   );
 }
 
+// Asset prefix for sub-path hosting (GitHub Pages preview). Plain <a>/meta
+// URLs don't get Next's automatic basePath treatment, so we prefix manually.
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const site = {
   name: "TAK Steel Fabrication LLC",
   shortName: "TSF",
@@ -45,7 +49,9 @@ export const site = {
   },
 
   established: "1997",
-  profilePdf: "/docs/tsf-company-profile.pdf",
+  profilePdf: `${assetBase}/docs/tsf-company-profile.pdf`,
+  // Resolved against metadataBase (which already carries any base path).
+  ogImage: "/images/og.jpg",
 
   nav: [
     { label: "Home", href: "/" },

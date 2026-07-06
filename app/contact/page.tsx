@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description:
       "Contact TAK Steel Fabrication LLC for structural steel fabrication in Dubai and Sharjah, UAE. Send drawings or BOQs for a fast, competitive proposal.",
     url: "/contact",
-    images: [{ url: "/images/og.jpg", width: 1200, height: 630 }],
+    images: [{ url: site.ogImage, width: 1200, height: 630 }],
   },
 };
 

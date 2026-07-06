@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description:
       "TAK Steel Fabrication LLC (TSF): structural steel fabrication and engineering in the UAE since 1997, with Dubai HQ and an ISO-certified Sharjah facility.",
     url: "/about",
-    images: [{ url: "/images/og.jpg", width: 1200, height: 630 }],
+    images: [{ url: site.ogImage, width: 1200, height: 630 }],
   },
 };
 

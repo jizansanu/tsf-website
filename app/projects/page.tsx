@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { site } from "@/lib/site";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CTABand from "@/components/CTABand";
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     description:
       "Explore TSF steel fabrication projects across the UAE: structural steel, custom fabrication, oil & gas, and marine work delivered from Dubai and Sharjah.",
     url: "/projects",
-    images: [{ url: "/images/og.jpg", width: 1200, height: 630 }],
+    images: [{ url: site.ogImage, width: 1200, height: 630 }],
   },
 };
 

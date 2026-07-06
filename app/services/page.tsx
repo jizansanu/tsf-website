@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { site } from "@/lib/site";
 import { Fragment } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     description:
       "Structural steel fabrication, custom fabrication, CNC machining, sheet metal, oil & gas and marine engineering services in Dubai & Sharjah, UAE.",
     url: "/services",
-    images: [{ url: "/images/og.jpg", width: 1200, height: 630 }],
+    images: [{ url: site.ogImage, width: 1200, height: 630 }],
   },
 };
 
