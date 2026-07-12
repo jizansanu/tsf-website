@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 import { services, isoCerts } from "@/lib/data";
+import LogoMark from "@/components/LogoMark";
 
 export default function Footer() {
   return (
@@ -11,11 +12,9 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-14 items-center justify-center border border-gold/60 font-display text-2xl font-bold tracking-wide text-gold">
-                TSF
-              </span>
-              <span className="flex flex-col leading-tight">
+            <div className="flex items-center gap-3.5">
+              <LogoMark className="h-9 w-auto text-gold" />
+              <span className="flex flex-col border-l border-white/15 pl-3.5 leading-tight">
                 <span className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-white">
                   TAK Steel Fabrication
                 </span>

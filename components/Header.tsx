@@ -6,14 +6,13 @@ import { usePathname } from "next/navigation";
 import { FileDown, Menu, Phone, X } from "lucide-react";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/cn";
+import LogoMark from "@/components/LogoMark";
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-3" aria-label={`${site.name}, Home`}>
-      <span className="flex h-11 w-14 items-center justify-center bg-ink font-display text-2xl font-bold tracking-wide text-gold">
-        TSF
-      </span>
-      <span className="hidden flex-col leading-tight sm:flex">
+    <Link href="/" className="flex items-center gap-3.5" aria-label={`${site.name}, Home`}>
+      <LogoMark className="h-9 w-auto text-ink" />
+      <span className="hidden flex-col border-l border-line pl-3.5 leading-tight sm:flex">
         <span className="font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-ink">
           TAK Steel Fabrication
         </span>
