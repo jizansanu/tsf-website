@@ -287,78 +287,132 @@ export type Project = {
   image: string;
 };
 
-export const projectSectors = [
-  "Structural Steel",
-  "Custom Fabrication",
-  "Oil & Gas",
-  "Marine",
-  "Stainless Steel",
-] as const;
+export const projectSectors = ["Structural Steel", "Custom Fabrication"] as const;
 
-/** Placeholder projects — replace with real project data from the client. */
+/**
+ * Real TSF project photography supplied by the client. Titles and scopes
+ * describe what each photo shows; locations are kept to the emirate level
+ * pending confirmed project details from the client.
+ */
 export const projects: Project[] = [
   {
-    title: "Industrial Warehouse Complex",
-    location: "Dubai Industrial City, Dubai",
+    title: "Multi-Level Steel Building",
+    location: "United Arab Emirates",
     sector: "Structural Steel",
-    scope: "Design, fabrication & erection of heavy structural steel warehouse framing.",
+    scope: "Structural steel framing and floor beams for a multi-storey building.",
     image: "/images/proj-01.jpg",
   },
   {
-    title: "Factory Extension Structure",
-    location: "Sajja Industrial Area, Sharjah",
+    title: "Structural Steel Framework",
+    location: "Dubai, UAE",
     sector: "Structural Steel",
-    scope: "Multi-bay factory extension with mezzanine floors and crane beams.",
+    scope: "Heavy structural steel columns and primary framing erected on site.",
     image: "/images/proj-02.jpg",
   },
   {
-    title: "Architectural Spiral Staircase",
-    location: "Business Bay, Dubai",
-    sector: "Custom Fabrication",
-    scope: "Feature spiral staircase with stainless steel handrails and glass balustrade.",
+    title: "Steel Roofing Structure",
+    location: "Sharjah, UAE",
+    sector: "Structural Steel",
+    scope: "Roof steelwork, rafters and purlins for a commercial building.",
     image: "/images/proj-03.jpg",
   },
   {
-    title: "Pipe Spools & Supports Package",
-    location: "Oil Field Facility, Abu Dhabi",
-    sector: "Oil & Gas",
-    scope: "Fabrication of pipe spools, flanges, and support structures for an oil field facility.",
+    title: "Warehouse Steel Frame",
+    location: "United Arab Emirates",
+    sector: "Structural Steel",
+    scope: "Portal-frame fabrication and erection for an industrial warehouse.",
     image: "/images/proj-04.jpg",
   },
   {
-    title: "Equipment Support Structures",
-    location: "Jebel Ali Free Zone, Dubai",
-    sector: "Structural Steel",
-    scope: "Pipe racks and equipment support structures for a process plant.",
+    title: "Steel Gantry Structure",
+    location: "Dubai, UAE",
+    sector: "Custom Fabrication",
+    scope: "Fabrication and installation of a freestanding steel gantry structure.",
     image: "/images/proj-05.jpg",
   },
   {
-    title: "Vessel Structural Repairs",
-    location: "Port Khalid, Sharjah",
-    sector: "Marine",
-    scope: "Structural repair and maintenance works for a commercial marine vessel.",
+    title: "Outdoor Stage Structure",
+    location: "United Arab Emirates",
+    sector: "Custom Fabrication",
+    scope: "Custom steel truss and stage structure for an outdoor venue.",
     image: "/images/proj-06.jpg",
   },
   {
-    title: "Steel Canopy & Walkways",
-    location: "Al Quoz, Dubai",
+    title: "Steel Canopy Gantry",
+    location: "Sharjah, UAE",
     sector: "Custom Fabrication",
-    scope: "Entrance canopies, access walkways, and maintenance platforms.",
+    scope: "Architectural steel gantry and canopy framing with painted finish.",
     image: "/images/proj-07.jpg",
   },
   {
-    title: "Diesel Storage Tank Farm",
-    location: "Hamriyah Free Zone, Sharjah",
+    title: "Access Walkways & Platforms",
+    location: "United Arab Emirates",
     sector: "Custom Fabrication",
-    scope: "Fabrication and installation of diesel storage tanks with access platforms.",
+    scope: "Steel walkways, access platforms and supporting structures.",
     image: "/images/proj-08.jpg",
   },
   {
-    title: "Stainless Process Platforms",
-    location: "Dubai Investments Park, Dubai",
-    sector: "Stainless Steel",
-    scope: "Hygienic stainless steel platforms and handrails for a food processing facility.",
+    title: "Steel Storage Racking",
+    location: "Dubai, UAE",
+    sector: "Custom Fabrication",
+    scope: "Fabrication and installation of heavy-duty steel storage racks.",
     image: "/images/proj-09.jpg",
+  },
+  {
+    title: "Fabricated Steel Beams",
+    location: "Sharjah, UAE",
+    sector: "Structural Steel",
+    scope: "Cut, drilled and welded structural steel beams ready for erection.",
+    image: "/images/proj-10.jpg",
+  },
+  {
+    title: "Primed Structural Steelwork",
+    location: "United Arab Emirates",
+    sector: "Structural Steel",
+    scope: "Structural members with surface preparation and protective primer coat.",
+    image: "/images/proj-11.jpg",
+  },
+  {
+    title: "Steel Portal Frame",
+    location: "Dubai, UAE",
+    sector: "Structural Steel",
+    scope: "Portal-frame columns and rafters fabricated for an industrial building.",
+    image: "/images/proj-12.jpg",
+  },
+  {
+    title: "Structural Steel Sections",
+    location: "Sharjah, UAE",
+    sector: "Structural Steel",
+    scope: "Fabricated steel sections and channels prepared in the workshop.",
+    image: "/images/proj-13.jpg",
+  },
+  {
+    title: "Fabrication Supply & Delivery",
+    location: "United Arab Emirates",
+    sector: "Structural Steel",
+    scope: "Fabricated steelwork loaded and dispatched to site for installation.",
+    image: "/images/proj-14.jpg",
+  },
+  {
+    title: "Foundation & Support Structure",
+    location: "Dubai, UAE",
+    sector: "Structural Steel",
+    scope: "Steel supporting structures and embedments for a reinforced foundation.",
+    image: "/images/proj-15.jpg",
+  },
+  {
+    title: "Steel Platform Detail",
+    location: "Sharjah, UAE",
+    sector: "Structural Steel",
+    scope: "Structural platform framing and connection detailing.",
+    image: "/images/proj-16.jpg",
+  },
+  {
+    title: "Structural Steel Detailing",
+    location: "United Arab Emirates",
+    sector: "Structural Steel",
+    scope: "Fabricated and detailed structural steel members on site.",
+    image: "/images/proj-17.jpg",
   },
 ];
 
