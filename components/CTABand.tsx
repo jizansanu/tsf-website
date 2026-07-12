@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { FileDown, Phone } from "lucide-react";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import Magnetic from "@/components/motion/Magnetic";
@@ -44,14 +44,20 @@ export default function CTABand({
           <FadeUp delay={0.2}>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Magnetic>
-                <ButtonLink href="/contact" className="px-9 py-4">
-                  Request a Quote
+                <ButtonLink href={site.whatsappHref} className="px-9 py-4">
+                  Contact Us
                 </ButtonLink>
               </Magnetic>
-              <ButtonLink href={site.phoneHref} variant="outline-light">
-                <Phone size={15} aria-hidden /> {site.phoneDisplay}
+              <ButtonLink href={site.profilePdf} variant="outline-light" external>
+                <FileDown size={15} aria-hidden /> Download Brochure
               </ButtonLink>
             </div>
+            <a
+              href={site.phoneHref}
+              className="heat mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/60 hover:text-gold"
+            >
+              <Phone size={14} aria-hidden /> Or call {site.phoneDisplay}
+            </a>
           </FadeUp>
         </div>
       </Container>

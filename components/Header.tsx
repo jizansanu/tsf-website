@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Phone, X } from "lucide-react";
+import { FileDown, Menu, Phone, X } from "lucide-react";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
@@ -107,12 +107,14 @@ export default function Header() {
                 </Link>
               );
             })}
-            <Link
-              href="/contact"
+            <a
+              href={site.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gold px-6 py-3 font-display text-[13px] font-semibold uppercase tracking-[0.18em] text-ink transition-colors hover:bg-golddark hover:text-white"
             >
-              Request a Quote
-            </Link>
+              Contact Us
+            </a>
           </nav>
 
           <button
@@ -148,13 +150,24 @@ export default function Header() {
                 );
               })}
               <div className="flex flex-col gap-3 py-4">
-                <Link
-                  href="/contact"
+                <a
+                  href={site.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="bg-gold px-6 py-3.5 text-center font-display text-[13px] font-semibold uppercase tracking-[0.18em] text-ink"
                 >
-                  Request a Quote
-                </Link>
+                  Contact Us
+                </a>
+                <a
+                  href={site.profilePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-center gap-2 border border-ink/25 px-6 py-3.5 font-display text-[13px] font-semibold uppercase tracking-[0.18em] text-ink"
+                >
+                  <FileDown size={14} aria-hidden /> Download Brochure
+                </a>
                 <a
                   href={site.phoneHref}
                   className="flex items-center justify-center gap-2 border border-line px-6 py-3.5 font-display text-[13px] font-semibold uppercase tracking-[0.18em] text-ink"

@@ -12,7 +12,6 @@ import {
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import PageHero from "@/components/PageHero";
-import ContactForm from "@/components/ContactForm";
 import TextReveal from "@/components/motion/TextReveal";
 import Magnetic from "@/components/motion/Magnetic";
 import { FadeUp, LineDraw, Stagger, StaggerItem } from "@/components/motion/Animate";
@@ -21,12 +20,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact TAK Steel Fabrication LLC for structural steel fabrication in Dubai and Sharjah, UAE. Send drawings or BOQs for a fast, competitive proposal.",
+    "Contact TAK Steel Fabrication LLC for structural steel fabrication in Dubai and Sharjah, UAE. Reach us on WhatsApp or download our company brochure.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact | TAK Steel Fabrication LLC",
     description:
-      "Contact TAK Steel Fabrication LLC for structural steel fabrication in Dubai and Sharjah, UAE. Send drawings or BOQs for a fast, competitive proposal.",
+      "Contact TAK Steel Fabrication LLC for structural steel fabrication in Dubai and Sharjah, UAE. Reach us on WhatsApp or download our company brochure.",
     url: "/contact",
     images: [{ url: site.ogImage, width: 1200, height: 630 }],
   },
@@ -37,10 +36,8 @@ const cardCls =
 const iconCls =
   "flex h-11 w-11 shrink-0 items-center justify-center bg-ink transition-colors duration-300 group-hover:bg-gold";
 const iconGlyphCls = "text-gold transition-colors duration-300 group-hover:text-ink";
-const labelCls =
-  "font-display text-sm font-semibold uppercase tracking-[0.18em] text-ink";
-const linkCls =
-  "mt-1.5 block text-sm text-muted transition-colors hover:text-golddark";
+const labelCls = "font-display text-sm font-semibold uppercase tracking-[0.18em] text-ink";
+const linkCls = "mt-1.5 block text-sm text-muted transition-colors hover:text-golddark";
 
 export default function ContactPage() {
   return (
@@ -48,12 +45,12 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="Let&apos;s Discuss Your Project"
-        lead="Send us your drawings, BOQs, or project requirements and our engineering team will respond quickly with a competitive proposal."
+        lead="Reach our engineering team directly on WhatsApp, or download our company brochure to review our capabilities and certifications first."
         image="/images/hero-contact.jpg"
         crumb="Contact"
       />
 
-      {/* Contact grid */}
+      {/* Primary action tiles: WhatsApp + Brochure */}
       <section className="relative overflow-hidden bg-paper py-20 sm:py-24">
         <span
           className="text-ghost pointer-events-none absolute -top-8 right-0 select-none font-display text-[9rem] font-bold leading-none sm:text-[13rem]"
@@ -62,131 +59,192 @@ export default function ContactPage() {
           01
         </span>
         <Container className="relative">
-          <div className="grid gap-10 lg:grid-cols-5">
-            {/* Info stack */}
-            <div className="lg:col-span-2">
-              <FadeUp>
-                <p className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-                  Reach Us
-                </p>
-              </FadeUp>
-              <TextReveal
-                as="h2"
-                lines={[{ text: "Direct lines" }, { text: "to our team" }]}
-                className="font-display text-3xl font-semibold uppercase leading-tight text-ink sm:text-4xl"
-              />
-              <LineDraw className="mt-6 w-24" delay={0.3} />
-
-              <Stagger className="mt-8 space-y-4">
-                <StaggerItem>
-                  <div className={cardCls}>
-                    <div className={iconCls}>
-                      <Phone size={18} className={iconGlyphCls} aria-hidden />
-                    </div>
-                    <div>
-                      <h3 className={labelCls}>Phone</h3>
-                      <a href={site.phoneHref} className={linkCls}>
-                        {site.phoneDisplay}
-                      </a>
-                    </div>
-                  </div>
-                </StaggerItem>
-
-                <StaggerItem>
-                  <div className={cardCls}>
-                    <div className={iconCls}>
-                      <MessageCircle size={18} className={iconGlyphCls} aria-hidden />
-                    </div>
-                    <div>
-                      <h3 className={labelCls}>WhatsApp</h3>
-                      <a
-                        href={site.whatsappHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={linkCls}
-                      >
-                        Chat on WhatsApp
-                      </a>
-                    </div>
-                  </div>
-                </StaggerItem>
-
-                <StaggerItem>
-                  <div className={cardCls}>
-                    <div className={iconCls}>
-                      <Mail size={18} className={iconGlyphCls} aria-hidden />
-                    </div>
-                    <div>
-                      <h3 className={labelCls}>Email</h3>
-                      <a href={site.emailHref} className={linkCls}>
-                        {site.email}
-                      </a>
-                    </div>
-                  </div>
-                </StaggerItem>
-
-                <StaggerItem>
-                  <div className={cardCls}>
-                    <div className={iconCls}>
-                      <Building2 size={18} className={iconGlyphCls} aria-hidden />
-                    </div>
-                    <div>
-                      <h3 className={labelCls}>{site.hq.label}</h3>
-                      <div className="mt-1.5 text-sm leading-relaxed text-muted">
-                        {site.hq.lines.map((line) => (
-                          <p key={line}>{line}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </StaggerItem>
-
-                <StaggerItem>
-                  <div className={cardCls}>
-                    <div className={iconCls}>
-                      <Factory size={18} className={iconGlyphCls} aria-hidden />
-                    </div>
-                    <div>
-                      <h3 className={labelCls}>{site.facility.label}</h3>
-                      <div className="mt-1.5 text-sm leading-relaxed text-muted">
-                        {site.facility.lines.map((line) => (
-                          <p key={line}>{line}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </StaggerItem>
-
-                <StaggerItem>
-                  <div className={cardCls}>
-                    <div className={iconCls}>
-                      <Clock size={18} className={iconGlyphCls} aria-hidden />
-                    </div>
-                    <div>
-                      <h3 className={labelCls}>Working Hours</h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-muted">
-                        Monday to Saturday, 8:00 AM to 6:00 PM (GST)
-                      </p>
-                    </div>
-                  </div>
-                </StaggerItem>
-              </Stagger>
-            </div>
-
-            {/* Enquiry form */}
-            <div className="lg:col-span-3">
-              <FadeUp delay={0.15}>
-                <div className="border-t-2 border-t-gold">
-                  <ContactForm />
-                </div>
-              </FadeUp>
-            </div>
+          <div className="mx-auto max-w-2xl text-center">
+            <FadeUp>
+              <p className="mb-3 font-display text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                Get In Touch
+              </p>
+            </FadeUp>
+            <TextReveal
+              as="h2"
+              lines={[{ text: "Two ways to reach us" }]}
+              className="font-display text-3xl font-semibold uppercase leading-tight text-ink sm:text-4xl"
+            />
+            <LineDraw className="mx-auto mt-6 w-24" delay={0.25} />
           </div>
+
+          <Stagger className="mx-auto mt-12 grid max-w-4xl gap-7 sm:grid-cols-2" amount={0.2}>
+            <StaggerItem>
+              <div className="plate heat group flex h-full flex-col border-2 border-gold bg-white p-8 hover:shadow-[0_18px_60px_rgba(192,145,47,0.2)] sm:p-10">
+                <div className="flex h-14 w-14 items-center justify-center bg-gold text-ink">
+                  <MessageCircle size={26} aria-hidden />
+                </div>
+                <h3 className="mt-6 font-display text-xl font-semibold uppercase text-ink">
+                  Chat on WhatsApp
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                  The fastest way to reach our team. Send your drawings, BOQ, or project
+                  requirements and get a response the same day.
+                </p>
+                <Magnetic className="mt-7 inline-block self-start">
+                  <ButtonLink href={site.whatsappHref}>Contact Us</ButtonLink>
+                </Magnetic>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="plate heat group flex h-full flex-col border border-line bg-white p-8 hover:-translate-y-1 hover:border-gold hover:shadow-[0_18px_50px_rgba(11,13,16,0.12)] sm:p-10">
+                <div className="flex h-14 w-14 items-center justify-center bg-ink text-gold transition-colors duration-300 group-hover:bg-gold group-hover:text-ink">
+                  <FileDown size={26} aria-hidden />
+                </div>
+                <h3 className="mt-6 font-display text-xl font-semibold uppercase text-ink">
+                  Download Brochure
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                  Our full company profile: capabilities, ISO certifications, machinery list,
+                  and project references, ready to share internally.
+                </p>
+                <ButtonLink
+                  href={site.profilePdf}
+                  variant="outline"
+                  external
+                  className="mt-7 self-start"
+                >
+                  Download Brochure
+                </ButtonLink>
+              </div>
+            </StaggerItem>
+          </Stagger>
+
+          <FadeUp delay={0.3}>
+            <p className="mt-10 text-center text-sm text-muted">
+              Prefer a call or email? Reach us at{" "}
+              <a href={site.phoneHref} className="font-semibold text-golddark">
+                {site.phoneDisplay}
+              </a>{" "}
+              or{" "}
+              <a href={site.emailHref} className="font-semibold text-golddark">
+                {site.email}
+              </a>
+              .
+            </p>
+          </FadeUp>
+        </Container>
+      </section>
+
+      {/* Contact info grid */}
+      <section className="relative overflow-hidden border-y border-line bg-white py-20 sm:py-24">
+        <Container className="relative">
+          <FadeUp>
+            <p className="mb-3 text-center font-display text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+              Reach Us
+            </p>
+          </FadeUp>
+          <TextReveal
+            as="h2"
+            lines={[{ text: "Direct lines to our team" }]}
+            className="text-center font-display text-3xl font-semibold uppercase leading-tight text-ink sm:text-4xl"
+          />
+
+          <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" amount={0.1}>
+            <StaggerItem>
+              <div className={cardCls}>
+                <div className={iconCls}>
+                  <Phone size={18} className={iconGlyphCls} aria-hidden />
+                </div>
+                <div>
+                  <h3 className={labelCls}>Phone</h3>
+                  <a href={site.phoneHref} className={linkCls}>
+                    {site.phoneDisplay}
+                  </a>
+                </div>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className={cardCls}>
+                <div className={iconCls}>
+                  <MessageCircle size={18} className={iconGlyphCls} aria-hidden />
+                </div>
+                <div>
+                  <h3 className={labelCls}>WhatsApp</h3>
+                  <a
+                    href={site.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkCls}
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className={cardCls}>
+                <div className={iconCls}>
+                  <Mail size={18} className={iconGlyphCls} aria-hidden />
+                </div>
+                <div>
+                  <h3 className={labelCls}>Email</h3>
+                  <a href={site.emailHref} className={linkCls}>
+                    {site.email}
+                  </a>
+                </div>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className={cardCls}>
+                <div className={iconCls}>
+                  <Building2 size={18} className={iconGlyphCls} aria-hidden />
+                </div>
+                <div>
+                  <h3 className={labelCls}>{site.hq.label}</h3>
+                  <div className="mt-1.5 text-sm leading-relaxed text-muted">
+                    {site.hq.lines.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className={cardCls}>
+                <div className={iconCls}>
+                  <Factory size={18} className={iconGlyphCls} aria-hidden />
+                </div>
+                <div>
+                  <h3 className={labelCls}>{site.facility.label}</h3>
+                  <div className="mt-1.5 text-sm leading-relaxed text-muted">
+                    {site.facility.lines.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className={cardCls}>
+                <div className={iconCls}>
+                  <Clock size={18} className={iconGlyphCls} aria-hidden />
+                </div>
+                <div>
+                  <h3 className={labelCls}>Working Hours</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                    Monday to Saturday, 8:00 AM to 6:00 PM (GST)
+                  </p>
+                </div>
+              </div>
+            </StaggerItem>
+          </Stagger>
         </Container>
       </section>
 
       {/* Maps */}
-      <section className="relative overflow-hidden border-y border-line bg-white py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-paper py-20 sm:py-24">
         <span
           className="text-ghost pointer-events-none absolute -top-6 left-0 select-none font-display text-[9rem] font-bold leading-none sm:text-[13rem]"
           aria-hidden
@@ -224,10 +282,7 @@ export default function ContactPage() {
                       "&output=embed"
                     }
                     title={
-                      "Map showing the TSF " +
-                      location.label +
-                      " in " +
-                      location.lines.join(", ")
+                      "Map showing the TSF " + location.label + " in " + location.lines.join(", ")
                     }
                     className="h-[320px] w-full border-0"
                     loading="lazy"
@@ -240,7 +295,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      {/* Documents */}
+      {/* Prequalification documents (procurement teams) */}
       <section className="relative overflow-hidden bg-coal py-16 sm:py-20">
         <div className="blueprint absolute inset-0" aria-hidden />
         <span
@@ -259,22 +314,18 @@ export default function ContactPage() {
               </FadeUp>
               <TextReveal
                 as="h2"
-                lines={[{ text: "Company documents" }, { text: "on request" }]}
+                lines={[{ text: "Tendering or prequalifying" }, { text: "TSF as a vendor?" }]}
                 className="font-display text-3xl font-semibold uppercase leading-tight text-white sm:text-4xl"
               />
               <FadeUp delay={0.15}>
                 <p className="mt-4 text-base leading-relaxed text-white/70">
-                  ISO certificates, trade license, and prequalification documents are available for procurement teams.
+                  ISO certificates, trade license, and full prequalification documents are
+                  available on request for procurement teams.
                 </p>
               </FadeUp>
             </div>
             <FadeUp delay={0.2}>
               <div className="flex shrink-0 flex-col gap-4 sm:flex-row">
-                <Magnetic>
-                  <ButtonLink href={site.profilePdf} external>
-                    <FileDown size={15} aria-hidden /> Download Company Profile
-                  </ButtonLink>
-                </Magnetic>
                 <ButtonLink href={site.emailHref} variant="outline-light">
                   Request Documents
                 </ButtonLink>
