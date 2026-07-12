@@ -112,11 +112,18 @@ export default function HomePage() {
             </p>
           </FadeUp>
           <FadeUp delay={0.85}>
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Magnetic>
-                <ButtonLink href={site.whatsappHref}>Contact Us</ButtonLink>
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <Magnetic className="w-full sm:w-auto">
+                <ButtonLink href={site.whatsappHref} className="w-full sm:w-auto">
+                  Contact Us
+                </ButtonLink>
               </Magnetic>
-              <ButtonLink href={site.profilePdf} variant="outline-light" external>
+              <ButtonLink
+                href={site.profilePdf}
+                variant="outline-light"
+                external
+                className="w-full sm:w-auto"
+              >
                 <FileDown size={15} aria-hidden /> Download Brochure
               </ButtonLink>
             </div>
