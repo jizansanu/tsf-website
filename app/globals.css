@@ -5,10 +5,10 @@
   --color-ink: #0b0d10; /* near-black charcoal */
   --color-coal: #12161b; /* dark section surface */
   --color-steel: #3e4c5e; /* steel blue-gray */
-  --color-gold: #c0912f; /* molten gold (brand accent) */
-  --color-golddark: #8a6417; /* AA-compliant on white/paper (5.36:1 / 5.0:1) */
+  --color-gold: #ff4b24; /* brand red (primary accent) */
+  --color-golddark: #c4300e; /* dark red, AA on white/paper (5.56:1 / 5.18:1) */
   --color-oxide: #8a2b1d; /* heated-steel oxide red (heat ramp) */
-  --color-hot: #f2c14e; /* white-hot yellow (heat ramp) */
+  --color-hot: #ff8a3d; /* hot orange spark (heat ramp) */
   --color-paper: #f7f7f5; /* off-white body */
   --color-line: #e7e9ec; /* hairline borders */
   --color-muted: #5c6672; /* secondary text */
@@ -155,7 +155,7 @@ body {
    setting position here would override Tailwind position utilities. */
 .plasma-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(192, 145, 47, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 75, 36, 0.4), transparent);
 }
 .plasma-line::before {
   content: "";
@@ -165,7 +165,7 @@ body {
   height: 2px;
   width: 80px;
   transform: translateY(-50%);
-  background: linear-gradient(90deg, transparent, rgba(242, 193, 78, 0.9), #fff);
+  background: linear-gradient(90deg, transparent, rgba(255, 138, 61, 0.95), #fff);
   animation: plasma 6s linear infinite;
 }
 .plasma-line::after {
@@ -179,7 +179,7 @@ body {
   border-radius: 50%;
   transform: translateY(-50%);
   background: #fff;
-  box-shadow: 0 0 8px 2px rgba(242, 193, 78, 0.95), 0 0 22px 8px rgba(192, 145, 47, 0.5);
+  box-shadow: 0 0 8px 2px rgba(255, 150, 80, 0.95), 0 0 22px 8px rgba(255, 75, 36, 0.5);
   animation: plasma 6s linear infinite;
 }
 @keyframes plasma {
@@ -202,7 +202,7 @@ body {
 .dim-line {
   position: relative;
   height: 1px;
-  background: rgba(192, 145, 47, 0.7);
+  background: rgba(255, 75, 36, 0.7);
 }
 .dim-line::before,
 .dim-line::after {
@@ -212,7 +212,7 @@ body {
   height: 9px;
   width: 1px;
   transform: translateY(-50%);
-  background: rgba(192, 145, 47, 0.7);
+  background: rgba(255, 75, 36, 0.7);
 }
 .dim-line::before {
   left: 0;

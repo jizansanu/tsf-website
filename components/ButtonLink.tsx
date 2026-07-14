@@ -5,11 +5,11 @@ type Variant = "primary" | "outline" | "outline-light" | "ghost";
 
 const styles: Record<Variant, string> = {
   primary:
-    "bg-gold text-ink hover:bg-golddark hover:text-white border border-gold hover:border-golddark hover:shadow-[0_0_28px_rgba(242,193,78,0.4)]",
+    "bg-gold text-ink hover:bg-golddark hover:text-white border border-gold hover:border-golddark hover:shadow-[0_0_28px_rgba(255,75,36,0.45)]",
   outline:
-    "border border-ink/25 text-ink hover:border-gold hover:text-golddark hover:shadow-[0_0_20px_rgba(192,145,47,0.2)]",
+    "border border-ink/25 text-ink hover:border-gold hover:text-golddark hover:shadow-[0_0_20px_rgba(255,75,36,0.2)]",
   "outline-light":
-    "border border-white/30 text-white hover:border-gold hover:text-gold hover:shadow-[0_0_20px_rgba(242,193,78,0.25)]",
+    "border border-white/30 text-white hover:border-gold hover:text-gold hover:shadow-[0_0_20px_rgba(255,75,36,0.28)]",
   ghost: "text-golddark hover:text-ink",
 };
 

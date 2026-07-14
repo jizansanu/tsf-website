@@ -6,20 +6,12 @@ import { usePathname } from "next/navigation";
 import { FileDown, Menu, Phone, X } from "lucide-react";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/cn";
-import LogoMark from "@/components/LogoMark";
+import Logo from "@/components/Logo";
 
-function Logo() {
+function BrandLink() {
   return (
-    <Link href="/" className="flex items-center gap-3.5" aria-label={`${site.name}, Home`}>
-      <LogoMark className="h-9 w-auto text-ink" />
-      <span className="hidden flex-col border-l border-line pl-3.5 leading-tight sm:flex">
-        <span className="font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-ink">
-          TAK Steel Fabrication
-        </span>
-        <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-muted">
-          L.L.C &middot; United Arab Emirates
-        </span>
-      </span>
+    <Link href="/" className="flex items-center" aria-label={`${site.name}, Home`}>
+      <Logo variant="light" className="h-11 sm:h-12" />
     </Link>
   );
 }
@@ -87,7 +79,7 @@ export default function Header() {
         )}
       >
         <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
-          <Logo />
+          <BrandLink />
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
             {site.nav.map((item) => {

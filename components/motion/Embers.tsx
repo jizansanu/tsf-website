@@ -54,7 +54,7 @@ export default function Embers({ density = 40 }: { density?: number }) {
       r: rnd(0.6, 1.7),
       a: rnd(0.12, 0.55),
       tw: rnd(0.02, 0.09),
-      hue: rnd(34, 48),
+      hue: rnd(8, 24),
     });
     const ps: P[] = Array.from({ length: density }, () => spawn(true));
 
@@ -69,7 +69,7 @@ export default function Embers({ density = 40 }: { density?: number }) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `hsla(${p.hue}, 85%, 62%, ${alpha})`;
-        ctx.shadowColor = "rgba(242, 193, 78, 0.85)";
+        ctx.shadowColor = "rgba(255, 110, 50, 0.85)";
         ctx.shadowBlur = 7;
         ctx.fill();
         ctx.shadowBlur = 0;

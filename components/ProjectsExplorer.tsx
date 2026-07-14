@@ -26,7 +26,7 @@ export default function ProjectsExplorer() {
             className={cn(
               "heat relative border px-5 py-2.5 font-display text-xs font-semibold uppercase tracking-[0.16em]",
               filter === s
-                ? "border-gold bg-gold text-ink shadow-[0_6px_20px_rgba(192,145,47,0.35)]"
+                ? "border-gold bg-gold text-ink shadow-[0_6px_20px_rgba(255,75,36,0.35)]"
                 : "border-line bg-white text-muted hover:-translate-y-0.5 hover:border-gold hover:text-golddark"
             )}
           >

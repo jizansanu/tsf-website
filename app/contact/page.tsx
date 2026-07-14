@@ -75,7 +75,7 @@ export default function ContactPage() {
 
           <Stagger className="mx-auto mt-12 grid max-w-4xl gap-7 sm:grid-cols-2" amount={0.2}>
             <StaggerItem>
-              <div className="plate heat group flex h-full flex-col border-2 border-gold bg-white p-8 hover:shadow-[0_18px_60px_rgba(192,145,47,0.2)] sm:p-10">
+              <div className="plate heat group flex h-full flex-col border-2 border-gold bg-white p-8 hover:shadow-[0_18px_60px_rgba(255,75,36,0.2)] sm:p-10">
                 <div className="flex h-14 w-14 items-center justify-center bg-gold text-ink">
                   <MessageCircle size={26} aria-hidden />
                 </div>

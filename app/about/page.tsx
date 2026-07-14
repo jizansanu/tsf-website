@@ -400,7 +400,7 @@ export default function AboutPage() {
           <Stagger className="relative mt-14 grid gap-7 lg:grid-cols-2">
             {facilities.map((f) => (
               <StaggerItem key={f.label} className="h-full">
-                <div className="plate-dark group h-full overflow-hidden border border-white/12 bg-white/[0.03] transition-all duration-300 hover:border-gold/60 hover:bg-white/[0.06] hover:shadow-[0_18px_60px_rgba(192,145,47,0.15)]">
+                <div className="plate-dark group h-full overflow-hidden border border-white/12 bg-white/[0.03] transition-all duration-300 hover:border-gold/60 hover:bg-white/[0.06] hover:shadow-[0_18px_60px_rgba(255,75,36,0.15)]">
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Parallax className="absolute inset-0" strength={8}>
                       <Image

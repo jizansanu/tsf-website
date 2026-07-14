@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 import { services, isoCerts } from "@/lib/data";
-import LogoMark from "@/components/LogoMark";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -12,17 +12,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3.5">
-              <LogoMark className="h-9 w-auto text-gold" />
-              <span className="flex flex-col border-l border-white/15 pl-3.5 leading-tight">
-                <span className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-white">
-                  TAK Steel Fabrication
-                </span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/50">
-                  L.L.C &middot; Since {site.established}
-                </span>
-              </span>
-            </div>
+            <Logo variant="dark" className="h-12" />
             <p className="mt-5 text-sm leading-relaxed">
               {site.tagline} Complete structural steel and engineering solutions
               across the UAE and international markets.
