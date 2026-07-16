@@ -25,8 +25,8 @@ import TextReveal from "@/components/motion/TextReveal";
 import Parallax from "@/components/motion/Parallax";
 import MarqueeBand from "@/components/motion/MarqueeBand";
 import Magnetic from "@/components/motion/Magnetic";
-import Embers from "@/components/motion/Embers";
 import LogoWatermark from "@/components/motion/LogoWatermark";
+import HeroChevrons from "@/components/HeroChevrons";
 import { site } from "@/lib/site";
 import { services, whyChoose, industries, coreStrengths, projects } from "@/lib/data";
 
@@ -65,32 +65,36 @@ const cardLiftCls =
 export default function HomePage() {
   return (
     <>
-      {/* 1 — HERO */}
-      <section className="relative flex min-h-[88vh] items-center overflow-hidden bg-ink">
-        <div className="absolute inset-0">
-          <Parallax strength={12} className="h-full w-full">
-            <Image
-              src="/images/hero-home.jpg"
-              alt="Structural steel fabrication in progress at the TSF workshop"
-              fill
-              preload
-              sizes="100vw"
-              className="object-cover opacity-35"
-            />
-          </Parallax>
+      {/* 1 — HERO (full-bleed photographic) */}
+      <section className="relative flex min-h-[92vh] items-end overflow-hidden bg-ink">
+        {/* Living full-bleed photo */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/images/hero-home.jpg"
+            alt="TSF structural steel fabrication workshop in Sajja, Sharjah"
+            fill
+            priority
+            sizes="100vw"
+            className="kenburns object-cover"
+          />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" aria-hidden />
-        <div className="blueprint absolute inset-0" aria-hidden />
-        <Embers density={44} />
-        <div className="hero-sheen" aria-hidden />
-        <LogoWatermark className="right-[-10%] top-1/2 h-[150%] w-[68%] -translate-y-1/2 sm:w-[52%]" />
+        {/* Scrims */}
+        <div className="absolute inset-0 bg-ink/25" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-transparent" aria-hidden />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/60 to-transparent" aria-hidden />
+
+        <LogoWatermark className="right-[-4%] top-[6%] hidden h-[48%] w-[38%] lg:block" />
+        <HeroChevrons className="absolute bottom-14 right-8 hidden sm:flex lg:right-14" />
         <div className="plasma-line absolute inset-x-0 bottom-0" aria-hidden />
 
-        <Container className="relative py-28 sm:py-32">
-          <FadeUp delay={0.1} y={20}>
-            <p className="mb-5 font-display text-xs font-semibold uppercase tracking-[0.3em] text-gold">
-              {site.name} &middot; Since {site.established}
-            </p>
+        <Container className="relative pb-16 pt-44 sm:pb-24">
+          <FadeUp delay={0.1} y={16}>
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-[3px] w-12 bg-gold" aria-hidden />
+              <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-gold">
+                {site.name} &middot; Since {site.established}
+              </p>
+            </div>
           </FadeUp>
           <TextReveal
             as="h1"
@@ -101,10 +105,10 @@ export default function HomePage() {
               { text: "Precision Fabrication.", className: "text-gold" },
               { text: "Trusted Performance." },
             ]}
-            className="max-w-4xl font-display text-5xl font-semibold uppercase leading-[1.05] text-white sm:text-6xl lg:text-7xl"
+            className="max-w-4xl font-display text-5xl font-semibold uppercase leading-[1.02] text-white drop-shadow-[0_2px_24px_rgba(0,0,0,0.5)] sm:text-6xl lg:text-7xl"
           />
           <FadeUp delay={0.7}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
               {site.description}
             </p>
           </FadeUp>
@@ -125,32 +129,17 @@ export default function HomePage() {
               </ButtonLink>
             </div>
           </FadeUp>
-          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-2">
+          <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-2 border-t border-white/15 pt-6">
             {trustItems.map(({ icon: Icon, label }, i) => (
-              <FadeUp key={label} delay={1.0 + i * 0.08} y={14}>
-                <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-white/50">
+              <FadeUp key={label} delay={1.0 + i * 0.08} y={12}>
+                <span className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-white/70">
                   <Icon size={14} className="shrink-0 text-gold" aria-hidden />
                   {label}
                 </span>
               </FadeUp>
             ))}
           </div>
-          <FadeUp delay={1.4} y={10}>
-            <p className="anno mt-8 text-white/30">
-              DWG NO. TSF-2026-001 &middot; 25.20&deg;N 55.27&deg;E &middot; EST. {site.established}
-            </p>
-          </FadeUp>
         </Container>
-
-        <div
-          className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-[10px] font-medium uppercase tracking-[0.3em] text-white/50 sm:flex"
-          aria-hidden
-        >
-          <span>Scroll</span>
-          <span className="relative h-14 w-px overflow-hidden bg-white/20">
-            <span className="absolute inset-x-0 top-0 h-6 animate-pulse bg-gold" />
-          </span>
-        </div>
       </section>
 
       {/* 2 — INTRO SPLIT */}

@@ -221,6 +221,55 @@ body {
   right: 0;
 }
 
+/* Ken Burns: slow, living zoom/drift on full-bleed hero photos */
+.kenburns {
+  animation: kenburns 26s ease-in-out infinite alternate;
+  transform-origin: 60% 40%;
+}
+@keyframes kenburns {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-1.5%, -1.5%, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kenburns {
+    animation: none;
+    transform: scale(1.02);
+  }
+}
+
+/* Forward chevron accent (progress motif) — staggered slide loop */
+@keyframes chevronSlide {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+}
+.chevron-a {
+  animation: chevronSlide 2.6s ease-in-out infinite;
+}
+.chevron-b {
+  animation: chevronSlide 2.6s ease-in-out infinite 0.18s;
+}
+.chevron-c {
+  animation: chevronSlide 2.6s ease-in-out infinite 0.36s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .chevron-a,
+  .chevron-b,
+  .chevron-c {
+    animation: none;
+  }
+}
+
 /* Hero ambient light sheen — a slow diagonal glint sweeping across */
 .hero-sheen {
   position: absolute;
