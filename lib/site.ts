@@ -48,7 +48,7 @@ export const site = {
     mapQuery: "Sajja Industrial Area, Sharjah",
   },
 
-  established: "1997",
+  established: "2012",
   profilePdf: `${assetBase}/docs/tsf-company-profile.pdf`,
   // Resolved against metadataBase (which already carries any base path).
   ogImage: "/images/og.jpg",

@@ -273,7 +273,7 @@ export const clients = [
 ];
 
 export const stats = [
-  { value: "1997", label: "Established" },
+  { value: "2012", label: "Established" },
   { value: "3", label: "ISO Certifications" },
   { value: "2", label: "UAE Facilities" },
   { value: "14", label: "Industries Served" },

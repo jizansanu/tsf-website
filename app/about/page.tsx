@@ -27,12 +27,12 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "TAK Steel Fabrication LLC (TSF): structural steel fabrication and engineering in the UAE since 1997, with Dubai HQ and an ISO-certified Sharjah facility.",
+    "TAK Steel Fabrication LLC (TSF): structural steel fabrication and engineering in the UAE since 2012, with Dubai HQ and an ISO-certified Sharjah facility.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Us | TAK Steel Fabrication LLC",
     description:
-      "TAK Steel Fabrication LLC (TSF): structural steel fabrication and engineering in the UAE since 1997, with Dubai HQ and an ISO-certified Sharjah facility.",
+      "TAK Steel Fabrication LLC (TSF): structural steel fabrication and engineering in the UAE since 2012, with Dubai HQ and an ISO-certified Sharjah facility.",
     url: "/about",
     images: [{ url: site.ogImage, width: 1200, height: 630 }],
   },
@@ -69,7 +69,7 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About TSF"
-        title="Engineering Excellence Since 1997"
+        title="Engineering Excellence Since 2012"
         lead="One of the UAE's leading structural steel fabrication and engineering companies, delivering precision-built steel solutions from concept through commissioning."
         image="/images/hero-about.jpg"
         crumb="About"
@@ -99,7 +99,7 @@ export default function AboutPage() {
                   <p>
                     TAK Steel Fabrication LLC (TSF) is one of the UAE&apos;s
                     leading structural steel fabrication and engineering
-                    companies. Since 1997, our multidisciplinary team of
+                    companies. Since 2012, our multidisciplinary team of
                     structural engineers, fabrication specialists, project
                     managers, QA/QC professionals, and certified welding
                     inspectors has delivered engineered steel solutions for

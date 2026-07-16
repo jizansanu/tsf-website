@@ -32,12 +32,12 @@ import { services, whyChoose, industries, coreStrengths, projects } from "@/lib/
 export const metadata: Metadata = {
   title: "TAK Steel Fabrication LLC (TSF) | Structural Steel Fabrication & Engineering, UAE",
   description:
-    "ISO-certified structural steel fabrication and engineering in Dubai and Sharjah, UAE. Structural steel, custom fabrication, CNC machining and marine solutions since 1997.",
+    "ISO-certified structural steel fabrication and engineering in Dubai and Sharjah, UAE. Structural steel, custom fabrication, CNC machining and marine solutions since 2012.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "TAK Steel Fabrication LLC (TSF) | Structural Steel Fabrication & Engineering, UAE",
     description:
-      "ISO-certified structural steel fabrication and engineering in Dubai and Sharjah, UAE. Structural steel, custom fabrication, CNC machining and marine solutions since 1997.",
+      "ISO-certified structural steel fabrication and engineering in Dubai and Sharjah, UAE. Structural steel, custom fabrication, CNC machining and marine solutions since 2012.",
     url: "/",
     images: [{ url: site.ogImage, width: 1200, height: 630 }],
   },
@@ -186,7 +186,7 @@ export default function HomePage() {
               </FadeUp>
               <FadeUp delay={0.25}>
                 <p className="mt-4 text-base leading-relaxed text-muted">
-                  Since 1997, our engineering-led approach has combined certified people, advanced
+                  Since 2012, our engineering-led approach has combined certified people, advanced
                   CNC technology, and disciplined project management to deliver steel structures
                   that perform, on schedule and to specification.
                 </p>
@@ -227,7 +227,7 @@ export default function HomePage() {
                 <FadeUp delay={0.3} y={20} className="absolute bottom-6 left-6">
                   <div className="plate-dark bg-ink p-5">
                     <p className="stamped font-display text-3xl font-semibold text-gold">
-                      Since 1997
+                      Since 2012
                     </p>
                     <p className="mt-1 text-xs font-medium uppercase tracking-[0.2em] text-white/60">
                       Serving the UAE
