@@ -221,6 +221,46 @@ body {
   right: 0;
 }
 
+/* Hero ambient light sheen — a slow diagonal glint sweeping across */
+.hero-sheen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-sheen::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -60%;
+  width: 45%;
+  transform: skewX(-14deg);
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 138, 61, 0.04),
+    transparent
+  );
+  animation: heroSheen 9s ease-in-out infinite;
+}
+@keyframes heroSheen {
+  0% {
+    left: -60%;
+  }
+  55%,
+  100% {
+    left: 130%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-sheen::before {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 /* Animated gold underline for nav links */
 .link-underline {
   position: relative;

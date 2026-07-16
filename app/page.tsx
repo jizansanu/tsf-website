@@ -26,6 +26,7 @@ import Parallax from "@/components/motion/Parallax";
 import MarqueeBand from "@/components/motion/MarqueeBand";
 import Magnetic from "@/components/motion/Magnetic";
 import Embers from "@/components/motion/Embers";
+import LogoWatermark from "@/components/motion/LogoWatermark";
 import { site } from "@/lib/site";
 import { services, whyChoose, industries, coreStrengths, projects } from "@/lib/data";
 
@@ -81,13 +82,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/30" aria-hidden />
         <div className="blueprint absolute inset-0" aria-hidden />
         <Embers density={44} />
-        <span
-          className="text-ghost-light pointer-events-none absolute -bottom-10 right-0 hidden select-none font-display text-[16rem] font-bold uppercase leading-none opacity-30 lg:block"
-          aria-hidden
-        >
-          {site.shortName}
-        </span>
-        <div className="absolute inset-x-0 bottom-0 h-1 hazard opacity-70" aria-hidden />
+        <div className="hero-sheen" aria-hidden />
+        <LogoWatermark className="right-[-10%] top-1/2 h-[150%] w-[68%] -translate-y-1/2 sm:w-[52%]" />
+        <div className="plasma-line absolute inset-x-0 bottom-0" aria-hidden />
 
         <Container className="relative py-28 sm:py-32">
           <FadeUp delay={0.1} y={20}>
