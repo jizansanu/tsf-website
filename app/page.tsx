@@ -217,8 +217,8 @@ export default function HomePage() {
                 />
                 <Parallax strength={8} className="aspect-[4/5]">
                   <Image
-                    src="/images/about-workshop.jpg"
-                    alt="Fabrication team at work inside the TSF workshop in Sajja, Sharjah"
+                    src="/images/home-intro.jpg"
+                    alt="Erected structural steel framework by TSF in Sajja, Sharjah"
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
